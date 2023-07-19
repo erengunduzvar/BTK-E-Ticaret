@@ -1,7 +1,17 @@
-﻿@model StoreApp.Models.Product
+﻿@{
+    Layout = "_Layout";
+}
+
+@model StoreApp.Models.Product
 
 <div>
     <h3>@Model.ProductName</h3>
     <p>@Model.Price</p>
     <a href="/Product">Ürünlere Dön</a>
 </div>
+
+@section Header{
+    <div>
+        Header for only Get
+    </div>
+}
