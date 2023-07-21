@@ -8,9 +8,5 @@
 
 @foreach (var product in Model)
 {
-    <div>
-        <h3>@product.ProductName</h3>
-        <p>@product.Price</p>
-        <a href="/Product/Get/@product.ProductId">Detaylar</a>
-    </div>
+    <partial name="_ProductCard" model="@product"/>
 }

@@ -4,6 +4,7 @@
     <body>
         <header>
             Store App : Header
+            <partial name="_Navbar" />
             @RenderSection("Header",false)
         </header>
 
@@ -15,7 +16,6 @@
         @RenderSection("Footer",false)
             Footer
         </footer>
-
         @await RenderSectionAsync("Scripts",required:false)
     </body> 
 </html>
