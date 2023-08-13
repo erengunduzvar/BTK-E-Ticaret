@@ -24,9 +24,11 @@ namespace StoreApp.Controllers
 
         public IActionResult Get(int id)
         {
+            var model = _manager.Product.GetById(id, false);
+            return View(model);
             //Product product = _context.Products.First(x => x.ProductId == id);
             //return View(product);
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
 
 
