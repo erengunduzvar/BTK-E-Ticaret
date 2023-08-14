@@ -3,32 +3,30 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Repositories;
 using Repositories.Contracts;
+using Services.Contracts;
 
 namespace StoreApp.Controllers
 {
     public class ProductController : Controller
     {
         //Dependency Injection
-        private readonly IRepositoryManager _manager;
+        IServiceManager serviceManager;
 
-        public ProductController(IRepositoryManager manager)
+        public ProductController(IServiceManager serviceManager)
         {
-            _manager = manager;
+            this.serviceManager = serviceManager;
         }
 
         public IActionResult Index()
         {
-            var model = _manager.Product.GetAllProducts(false).ToList();
+            var model = serviceManager.ProductService.GetAllProducts(false).ToList();
             return View(model);
         }
 
         public IActionResult Get(int id)
         {
-            var model = _manager.Product.GetById(id, false);
+            var model = serviceManager.ProductService.GetProductById(id, false);
             return View(model);
-            //Product product = _context.Products.First(x => x.ProductId == id);
-            //return View(product);
-            //throw new NotImplementedException();
         }
 
 
