@@ -11,14 +11,18 @@ namespace Repositories
     {
         private readonly IProductRepository _productRepository;
         private readonly RepositoryContext _repositoryContext;
+        private readonly ICategoryRepository _categoryRepository;
 
-        public RepositoryManager(IProductRepository productRepository, RepositoryContext repositoryContext)
+        public RepositoryManager(IProductRepository productRepository, RepositoryContext repositoryContext,ICategoryRepository categoryRepository)
         {
             _productRepository = productRepository;
             _repositoryContext = repositoryContext;
+            _categoryRepository = categoryRepository;
         }
 
         public IProductRepository Product => _productRepository;
+
+        public ICategoryRepository Category => _categoryRepository;
 
         public void Save()
         {
