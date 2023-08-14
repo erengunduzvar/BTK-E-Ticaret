@@ -4,11 +4,11 @@ using Services.Contracts;
 
 namespace StoreApp.Components
 {
-    public class ProductSummary : ViewComponent
+    public class ProductSummaryViewComponent : Microsoft.AspNetCore.Mvc.ViewComponent
     {
         private readonly IServiceManager manager;
 
-        public ProductSummary(IServiceManager manager)
+        public ProductSummaryViewComponent(IServiceManager manager)
         {
             this.manager = manager;
         }
