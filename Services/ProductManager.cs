@@ -19,6 +19,12 @@ namespace Services
             this.repositoryManager = repositoryManager;
         }
 
+        public void CreateProduct(Product product)
+        {
+            repositoryManager.Product.Create(product);
+            repositoryManager.Save();
+        }
+
         public IEnumerable<Product> GetAllProducts(bool trackChanges)
         {
             return repositoryManager.Product.GetAllProducts(trackChanges);

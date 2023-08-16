@@ -11,5 +11,7 @@ namespace Services.Contracts
     {
         IEnumerable<Product> GetAllProducts(bool trackChanges);
         Product? GetProductById(int id, bool trackChanges);
+
+        void CreateProduct(Product product);
     }
 }
