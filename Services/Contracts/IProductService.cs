@@ -13,5 +13,6 @@ namespace Services.Contracts
         Product? GetProductById(int id, bool trackChanges);
 
         void CreateProduct(Product product);
+        void UpdateOneProduct(Product product);
     }
 }

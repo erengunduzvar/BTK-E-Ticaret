@@ -37,5 +37,13 @@ namespace Services
                 throw new Exception("Product is not found");
             return product;
         }
+
+        public void UpdateOneProduct(Product product)
+        {
+            var entity = repositoryManager.Product.GetById(product.ProductId,true);
+            entity.ProductName = product.ProductName;
+            entity.Price = product.Price;
+            repositoryManager.Save();
+        }
     }
 }
