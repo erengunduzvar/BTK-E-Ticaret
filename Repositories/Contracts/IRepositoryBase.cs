@@ -14,5 +14,7 @@ namespace Repositories.Contracts
         T? FindByCondution(Expression<Func<T, bool>> condition ,bool trackChanges);
 
         void Create(T entity);
+
+        void Remove(T entity);
     }
 }

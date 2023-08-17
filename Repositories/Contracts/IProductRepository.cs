@@ -9,6 +9,7 @@ namespace Repositories.Contracts
 {
     public interface IProductRepository : IRepositoryBase<Product>
     {
+        void DeleteOneProduct(Product product);
         IQueryable<Product> GetAllProducts(bool trackChanges);
 
         Product? GetById(int id, bool trackChanges);

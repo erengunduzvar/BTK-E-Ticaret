@@ -25,6 +25,18 @@ namespace Services
             repositoryManager.Save();
         }
 
+        public void DeleteOneProduct(int id)
+        {
+            Product? product = GetProductById(id, false);
+            if(product is not null)
+            {
+                repositoryManager.Product.DeleteOneProduct(product);
+                repositoryManager.Save();
+            }
+            
+           
+        }
+
         public IEnumerable<Product> GetAllProducts(bool trackChanges)
         {
             return repositoryManager.Product.GetAllProducts(trackChanges);
