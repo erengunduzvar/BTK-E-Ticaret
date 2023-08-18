@@ -56,12 +56,19 @@ namespace Services
             return product;
         }
 
-        public void UpdateOneProduct(Product product)
+        public void UpdateOneProduct(ProductDtoForUpdate productDto)
         {
-            var entity = repositoryManager.Product.GetById(product.ProductId,true);
-            entity.ProductName = product.ProductName;
-            entity.Price = product.Price;
+            Product entity = _mapper.Map<Product>(productDto);
+            repositoryManager.Product.Update(entity);
             repositoryManager.Save();
+        }
+
+        public ProductDtoForUpdate GetOneProductForUpdate(int id, bool trackChanges)
+        {
+            var product = GetProductById(id, trackChanges);
+            ProductDtoForUpdate productDto = _mapper.Map<ProductDtoForUpdate>(product);
+
+            return productDto;
         }
     }
 }
