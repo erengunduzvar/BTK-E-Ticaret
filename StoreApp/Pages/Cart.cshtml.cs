@@ -8,14 +8,15 @@ namespace StoreApp.Pages
     public class CartModel : PageModel
     {
         private readonly IServiceManager manager;
-
-        public CartModel(IServiceManager _manager)
-        {
-            manager = _manager;
-        }
-
         public Cart Cart { get; set; } //IoC
         public string ReturnUrl { get; set; } = "/";
+
+        public CartModel(IServiceManager _manager, Cart _cart)
+        {
+            manager = _manager;
+            Cart = _cart;
+        }
+
 
         public void OnGet(string _ReturnUrl)
         {
