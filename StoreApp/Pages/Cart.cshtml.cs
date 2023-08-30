@@ -19,9 +19,9 @@ namespace StoreApp.Pages
         }
 
 
-        public void OnGet(string _ReturnUrl)
+        public void OnGet(string returnUrl)
         {
-            ReturnUrl = _ReturnUrl ?? "/";
+            ReturnUrl = returnUrl ?? "/";
             //Cart = HttpContext.Session.GetJson<Cart>("cart") ?? new Cart();
         }
 
@@ -37,7 +37,7 @@ namespace StoreApp.Pages
                 Cart.AddItem(product, 1);
                 //HttpContext.Session.SetJson<Cart>("cart",Cart);
             }
-            return Page(); //return URl gelecek
+            return RedirectToPage(new {returnUrl = returnUrl}); //return URl gelecek
         }
 
         public IActionResult OnPostRemove(int id,string returnUrl)

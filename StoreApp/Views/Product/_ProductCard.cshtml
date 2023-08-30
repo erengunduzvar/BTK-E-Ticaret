@@ -19,7 +19,7 @@
             <form id="@Model.ProductId" asp-page="/cart" method="post">
                 <div class="btn-group">
                     <input type="hidden" asp-for="ProductId" />
-                    <input type="hidden" name="returnUrl" value="/Product/Get/@Model.ProductId" />
+                    <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()" />
 
                     <a class="btn btn-primary" asp-action="Get" asp-route-id="@Model.ProductId"><i class="fa-solid fa-arrow-right fa-bounce"></i> Get Details </a>
 
