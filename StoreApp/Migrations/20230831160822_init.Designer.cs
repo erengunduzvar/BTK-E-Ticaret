@@ -11,8 +11,8 @@ using Repositories;
 namespace StoreApp.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230831134242_start")]
-    partial class start
+    [Migration("20230831160822_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -128,6 +128,9 @@ namespace StoreApp.Migrations
                     b.Property<string>("ProductName")
                         .HasColumnType("TEXT");
 
+                    b.Property<bool>("ShowCase")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Summary")
                         .HasColumnType("TEXT");
 
@@ -145,6 +148,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/1.jpg",
                             Price = 15000m,
                             ProductName = "Laptop",
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -154,6 +158,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/2.jpg",
                             Price = 15000m,
                             ProductName = "Computer",
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -163,6 +168,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/3.jpg",
                             Price = 698m,
                             ProductName = "Mouse",
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -172,6 +178,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/4.jpg",
                             Price = 3544m,
                             ProductName = "Monitor",
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -181,6 +188,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/5.jpg",
                             Price = 6200m,
                             ProductName = "Keyboard",
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -190,6 +198,7 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/6.jpg",
                             Price = 6200m,
                             ProductName = "Matematik",
+                            ShowCase = false,
                             Summary = ""
                         },
                         new
@@ -199,6 +208,37 @@ namespace StoreApp.Migrations
                             ImageUrl = "/images/7.jpg",
                             Price = 6200m,
                             ProductName = "Türkçe",
+                            ShowCase = false,
+                            Summary = ""
+                        },
+                        new
+                        {
+                            ProductId = 8,
+                            CategoryId = 1,
+                            ImageUrl = "/images/8.jpg",
+                            Price = 6985m,
+                            ProductName = "XP-Pen",
+                            ShowCase = true,
+                            Summary = ""
+                        },
+                        new
+                        {
+                            ProductId = 9,
+                            CategoryId = 2,
+                            ImageUrl = "/images/9.jpg",
+                            Price = 5m,
+                            ProductName = "İnsan Ne İle Yaşar",
+                            ShowCase = true,
+                            Summary = ""
+                        },
+                        new
+                        {
+                            ProductId = 10,
+                            CategoryId = 1,
+                            ImageUrl = "/images/10.jpg",
+                            Price = 957m,
+                            ProductName = "Samsung Galaxy 3",
+                            ShowCase = true,
                             Summary = ""
                         });
                 });

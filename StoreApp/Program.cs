@@ -38,6 +38,8 @@ app.UseEndpoints(endpoints =>
     endpoints.MapRazorPages();
 });
 
+//ApplicationExtension
+app.ConfigureAndCheckMigration();
 
 
 app.Run();
