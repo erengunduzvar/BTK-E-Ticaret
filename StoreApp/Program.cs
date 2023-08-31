@@ -13,6 +13,8 @@ builder.Services.ConfigureSession();
 builder.Services.ConfigureRepositoryRegistration();
 //Service Extension
 builder.Services.ConfigureServiceRegistration();
+//Service Extension
+builder.Services.ConfigureRouting();
 
 builder.Services.AddAutoMapper(typeof(Program));
 
