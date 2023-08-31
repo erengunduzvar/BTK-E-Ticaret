@@ -40,6 +40,7 @@ app.UseEndpoints(endpoints =>
 
 //ApplicationExtension
 app.ConfigureAndCheckMigration();
-
+//ApplicationExtension
+app.UseRequestLocalization();
 
 app.Run();

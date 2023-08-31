@@ -18,5 +18,15 @@ namespace StoreApp.Infrastructure.Extensions
                 context.Database.Migrate();
             }
         }
+
+        public static void ConfigureLocalization(this WebApplication application)
+        {
+            application.UseRequestLocalization(options =>
+            {
+                options.AddSupportedCultures("tr-TR")
+                .AddSupportedUICultures("tr-TR")
+                .SetDefaultCulture("tr-TR");
+            });
+        }
     }
 }
