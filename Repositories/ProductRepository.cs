@@ -23,5 +23,11 @@ namespace Repositories
         {
             return FindByCondution(p => p.ProductId.Equals(id),trackChanges);
         }
+
+        public IQueryable<Product> GetShowcaseProducts(bool trackChanges)
+        {
+            return FindAll(trackChanges)
+                .Where(p => p.ShowCase.Equals(true));
+        }
     }
 }

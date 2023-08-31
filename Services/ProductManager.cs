@@ -70,5 +70,11 @@ namespace Services
 
             return productDto;
         }
+
+        public IEnumerable<Product> GetShowcaseProducts(bool trackChanges)
+        {
+            var products = repositoryManager.Product.GetShowcaseProducts(trackChanges);
+            return products;
+        }
     }
 }
