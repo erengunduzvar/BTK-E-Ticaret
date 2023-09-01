@@ -80,5 +80,14 @@ namespace Services
         {
             return repositoryManager.Product.GetAllProductsWithDetails(p);
         }
+
+        public IEnumerable<Product> GetLatestProducts(int n, bool trackChanges)
+        {
+            return repositoryManager
+                .Product
+                .FindAll(trackChanges)
+                .OrderByDescending(prd => prd.ProductId)
+                .Take(n);
+        }
     }
 }
