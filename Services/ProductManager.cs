@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Entities.Dtos;
 using Entities.Models;
+using Entities.RequestParameters;
 using Repositories;
 using Repositories.Contracts;
 using Services.Contracts;
@@ -17,7 +18,7 @@ namespace Services
         IRepositoryManager repositoryManager;
         private readonly IMapper _mapper;
 
-        public ProductManager(IRepositoryManager repositoryManager,IMapper mapper)
+        public ProductManager(IRepositoryManager repositoryManager, IMapper mapper)
         {
             this.repositoryManager = repositoryManager;
             _mapper = mapper;
@@ -34,13 +35,11 @@ namespace Services
         public void DeleteOneProduct(int id)
         {
             Product? product = GetProductById(id, false);
-            if(product is not null)
+            if (product is not null)
             {
                 repositoryManager.Product.DeleteOneProduct(product);
                 repositoryManager.Save();
             }
-            
-           
         }
 
         public IEnumerable<Product> GetAllProducts(bool trackChanges)
@@ -75,6 +74,11 @@ namespace Services
         {
             var products = repositoryManager.Product.GetShowcaseProducts(trackChanges);
             return products;
+        }
+
+        public IEnumerable<Product> GetAllProductsWithDetails(ProductRequestParameters p)
+        {
+            return repositoryManager.Product.GetAllProductsWithDetails(p);
         }
     }
 }

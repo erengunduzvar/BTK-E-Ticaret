@@ -25,9 +25,9 @@ namespace Repositories.Config
                 new Product() { ProductId = 5, CategoryId = 2, ImageUrl = "/images/5.jpg", ProductName = "Keyboard", Price = 6200 , ShowCase = false },
                 new Product() { ProductId = 6, CategoryId = 1, ImageUrl = "/images/6.jpg", ProductName = "Matematik", Price = 6200, ShowCase = false },
                 new Product() { ProductId = 7, CategoryId = 1, ImageUrl = "/images/7.jpg", ProductName = "Türkçe", Price = 6200, ShowCase = false },
-                new Product() { ProductId = 8, CategoryId = 1, ImageUrl = "/images/8.jpg", ProductName = "XP-Pen", Price = 6985, ShowCase = true },
-                new Product() { ProductId = 9, CategoryId = 2, ImageUrl = "/images/9.jpg", ProductName= "İnsan Ne İle Yaşar", Price = 5, ShowCase = true },
-                new Product() { ProductId = 10, CategoryId = 1, ImageUrl = "/images/10.jpg", ProductName = "Samsung Galaxy 3", Price = 957, ShowCase = true }
+                new Product() { ProductId = 8, CategoryId = 2, ImageUrl = "/images/8.jpg", ProductName = "XP-Pen", Price = 6985, ShowCase = true },
+                new Product() { ProductId = 9, CategoryId = 1, ImageUrl = "/images/9.jpg", ProductName= "İnsan Ne İle Yaşar", Price = 5, ShowCase = true },
+                new Product() { ProductId = 10, CategoryId = 2, ImageUrl = "/images/10.jpg", ProductName = "Samsung Galaxy 3", Price = 957, ShowCase = true }
                 );
         }
     }
