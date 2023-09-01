@@ -36,5 +36,14 @@ namespace Repositories.Extensions
             else
                 return products;
         }
+
+        public static IQueryable<Product> ToPaginate(this IQueryable<Product> products,
+            int pageNumber, int PageSize)
+        {
+            return products
+                .Skip(((pageNumber - 1) * PageSize))
+                .Take(PageSize);
+
+        }
     }
 }
