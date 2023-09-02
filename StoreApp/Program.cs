@@ -46,4 +46,6 @@ app.ConfigureAndCheckMigration();
 //ApplicationExtension
 app.UseRequestLocalization();
 
+app.ConfigureDefaultAdminUser();
+
 app.Run();
