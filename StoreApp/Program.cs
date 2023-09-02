@@ -7,6 +7,7 @@ builder.Services.AddRazorPages();
 
 //Service Extension
 builder.Services.ConfigureDbContext(builder.Configuration);
+builder.Services.ConfigureIdentity();
 //Service Extension
 builder.Services.ConfigureSession();
 //Service Extension
