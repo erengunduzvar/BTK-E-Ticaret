@@ -11,8 +11,8 @@ using Repositories;
 namespace StoreApp.Migrations
 {
     [DbContext(typeof(RepositoryContext))]
-    [Migration("20230902171240_startIdentity")]
-    partial class startIdentity
+    [Migration("20230903140250_init")]
+    partial class init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -267,6 +267,29 @@ namespace StoreApp.Migrations
                         .HasDatabaseName("RoleNameIndex");
 
                     b.ToTable("AspNetRoles", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = "ac188650-d077-4aee-b82a-5d653e647fbb",
+                            ConcurrencyStamp = "8f80531f-89a8-4f4e-8bde-957e21ad5933",
+                            Name = "User",
+                            NormalizedName = "USER"
+                        },
+                        new
+                        {
+                            Id = "f7993f87-0a1d-47cf-a637-cc1cfa3ddf3a",
+                            ConcurrencyStamp = "9bb88765-84b7-41da-bbbb-c85a035093c0",
+                            Name = "Editor",
+                            NormalizedName = "EDITOR"
+                        },
+                        new
+                        {
+                            Id = "4aea7710-7680-4138-952f-5231df8b8d2d",
+                            ConcurrencyStamp = "035f9b50-aea9-48c0-843c-fe7a1f72f33e",
+                            Name = "Admin",
+                            NormalizedName = "ADMIN"
+                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
